@@ -19,7 +19,7 @@ jobs:
     - name: Install composer
       run: composer install
     - name: Run phpstan
-      run: ./vendor/bin/phpstan analyse conexion.php --level 5 
+      run: php ./vendor/bin/phpstan analyse conexion.php --level 5 
 
 
 
