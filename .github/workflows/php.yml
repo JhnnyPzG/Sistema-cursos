@@ -15,11 +15,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Code checkout
     - uses: actions/checkout@v3
-    - name: Install composer
+    - name: Set up composer
       run: composer install
-    - name: comprobar la conexion a sql
+    - name: Static code analysis
       run: php ./vendor/bin/phpstan analyse modules/conexion.php --level 5 
+    
 
 
 
