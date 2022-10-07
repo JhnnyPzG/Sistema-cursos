@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Ci
 
 on:
   push:
@@ -15,8 +15,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Code checkout
     - uses: actions/checkout@v3
+    - name: Set up Composer
+    - uses: php-actions/composer@v6
+    - name: Static code analysis with php stan
+    - uses: php-actions/phpstan@v3
 
     - name: Install composer
       run: composer install
+
+    - name: Run phpstan
+      run: ./vendor/bin/phpstan analyse modules --level 5 
+
+
 
