@@ -14,6 +14,6 @@ else
 
 // Check connection
 if ($conexion->connect_error)
-        die("Connection failed: " . $conn->connect_error);
+        die("Connection failed: " . $conexion->connect_error);
 
 mysqli_set_charset($conexion, 'utf8');
