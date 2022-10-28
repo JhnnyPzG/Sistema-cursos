@@ -23,9 +23,9 @@ resource "aws_instance" "app_server" {
     sudo yum install docker -y
     sudo service docker start
     sudo usermod -a -G docker ec2-user
-    sudo docker pull nginx
-    sudo docker run -d -p 80:80 nginx
-
+    sudo docker pull jpzg/phpapache:latest
+    sudo docker pull jpzg/sqlimage:8.0
+    sudo docker run -d -p 80:8000 jpzg/phpapache:latest
  EOF
  
  # https://github.com/hashicorp/terraform-provider-aws/issues/23315
