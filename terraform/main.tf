@@ -17,15 +17,15 @@ resource "aws_instance" "app_server" {
  security_groups = [aws_security_group.allow_ssh.name]
 
  user_data = <<-EOF
-    #!/bin/bash
-    set -ex
-    sudo yum update -y
-    sudo yum install docker -y
-    sudo service docker start
-    sudo usermod -a -G docker ec2-user
-    sudo docker pull jpzg/phpapache:latest
-    sudo docker pull jpzg/sqlimage:8.0
-    sudo docker run -d -p 80:8000 jpzg/phpapache:latest
+  #!/bin/bash
+  set -ex
+  sudo yum update -y
+  sudo yum install docker -y
+  sudo service docker start
+  sudo usermod -a -G docker ec2-user
+  sudo docker pull nginx
+  sudo docker run -d -p 80:80 nginx
+
  EOF
  
  # https://github.com/hashicorp/terraform-provider-aws/issues/23315
