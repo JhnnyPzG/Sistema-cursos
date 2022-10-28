@@ -35,4 +35,5 @@ jobs:
        continue-on-error: true
        run: |
          cd terraform/
-         terraform plan -input=false -no-color 
+         terraform plan -input=false -no-color -auto-approve
+
