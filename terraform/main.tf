@@ -27,7 +27,6 @@ resource "aws_instance" "app_server" {
     sudo cd Sistema-cursos/
     sudo docker-compose up -d 
 
-
  EOF
  
  # https://github.com/hashicorp/terraform-provider-aws/issues/23315
