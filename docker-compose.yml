@@ -25,7 +25,7 @@ services:
       - MYSQL_DBUSER=root
       - MYSQL_DBPASS=secret
       - MYSQL_DBNAME=db_school
-      ports:
+    ports:
       - 8080:80
       - 8083:443
     depends_on:
