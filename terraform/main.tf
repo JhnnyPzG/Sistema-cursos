@@ -27,7 +27,7 @@ resource "aws_instance" "app_server" {
     sudo docker pull jpzg/sqlimage:8.0
     sudo git clone https://github.com/JhnnyPzG/Sistema-cursos.git
     sudo cd Sistema-cursos/
-    sudo docker-compose up -d
+    sudo docker-compose up
 
  EOF
  
